@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <br><br>
+    <h1>Students</h1>
+    <center>
+    <ul class="student-list">
+        <% students.forEach((student) => { %>
+            <li class="student-item">
+                
+                <a href="/students/<%= student._id %>">
+                    <strong><p>Name : <%= student.name %></strong></p>
+                </a>
+                <strong><p>ID : </strong><%= student._id %></p>
+                <strong><p>Age : </strong><%= student.age %></p>
+            </li>
+        <% }); %>
+    </ul>
+    <a class="button" href="/students/create">Create Student</a>
+    <a class="button" href="/auth/logout">Logout</a>
+    </center>
+</body>
+</html>
